@@ -67,7 +67,7 @@
 @media screen and (max-width: 600px) {
 
     .card {
-      width: 90%; /* Ocupar todo el ancho disponible */
-      margin-bottom: 20px; /* Espacio entre elementos */
+      width: 90%; 
+      margin-bottom: 20px; 
     }
 }

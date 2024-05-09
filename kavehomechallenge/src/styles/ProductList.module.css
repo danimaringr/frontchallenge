@@ -49,12 +49,7 @@
 @media screen and (max-width: 600px) {
     .list {
       display: flex;
-      flex-direction: column; /* Cambiar dirección de la lista a vertical */
-      align-items: center; /* Centrar elementos en el eje horizontal */
-    }
-  
-    .product-card {
-      width: 100%; /* Ocupar todo el ancho disponible */
-      margin-bottom: 20px; /* Espacio entre elementos */
+      flex-direction: column; 
+      align-items: center; 
     }
 }

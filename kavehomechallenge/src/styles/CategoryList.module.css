@@ -9,14 +9,12 @@
   
   .categoria {
     background-color: #F5F5F5;
-    ; /* Fondo gris */
-    padding: 10px; /* Espaciado interno */
-    display: inline-flex; /* Usar display flex para centrar el contenido */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    border-radius: 5px; /* Bordes redondeados */
-    min-width: 180px; /* Ancho mínimo del recuadro */
-    min-height: 136px; /* Alto mínimo del recuadro */
+    padding: 10px; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    min-width: 180px;
+    min-height: 136px; 
     margin: 30px;
   }
   

@@ -4,7 +4,6 @@ import styles from '../styles/ProductList.module.css'
 import { FavoritosProvider } from '../contexts/FavoritosContext';
 import React from 'react';
 
-// Definimos la interfaz para la estructura de cada producto
 interface Product {
     productSku: string;
     productName: string;
@@ -56,35 +55,35 @@ const ProductList = () => {
         fetchProducts();
     }, []);
 
-    // Calcular el número total de páginas
+    // número total de páginas
     const totalPages = Math.ceil(products.length / productsPerPage);
 
-    // Calcular el rango de páginas a mostrar
+    // rango de páginas a mostrar
     const startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
     const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
 
-    // Generar los números de página para la paginación
+    // números de página para la paginación
     const pageNumbers = [];
     for (let i = startPage; i <= endPage; i++) {
         pageNumbers.push(i);
     }
 
-    // Cambiar a la página seleccionada
+    // página seleccionada
     const handleClick = (pageNumber: number) => {
         setCurrentPage(pageNumber);
     };
 
-    // Cambiar a la página anterior
+    // página anterior
     const prevPage = () => {
         setCurrentPage(currentPage - 1);
     };
 
-    // Cambiar a la página siguiente
+    // página siguiente
     const nextPage = () => {
         setCurrentPage(currentPage + 1);
     };
 
-    // Calcular el índice inicial y final de los productos a mostrar en la página actual
+    // índice inicial y final de los productos a mostrar en la página actual
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);

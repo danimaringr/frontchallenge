@@ -45,15 +45,14 @@
 .button {
   display: inline-block;
   background-color: #383831;
-  ; /* Fondo negro */
-  color: #fff; /* Texto blanco */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
-  text-decoration: none; /* Quitar subrayado del enlace */
+  color: #fff; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  text-decoration: none; 
   text-align: center; 
   margin: 20px;
 }
 
 .button:hover {
-  background-color: #333; /* Cambiar el color de fondo al pasar el mouse */
+  background-color: #333; 
 }
