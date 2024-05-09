@@ -1,0 +1,25 @@
+.categoriaList {
+    list-style: none; 
+    justify-content: center; 
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+  }
+  
+  .categoria {
+    background-color: #F5F5F5;
+    ; /* Fondo gris */
+    padding: 10px; /* Espaciado interno */
+    display: inline-flex; /* Usar display flex para centrar el contenido */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    border-radius: 5px; /* Bordes redondeados */
+    min-width: 180px; /* Ancho mínimo del recuadro */
+    min-height: 136px; /* Alto mínimo del recuadro */
+    margin: 30px;
+  }
+  
+  .textoCategoria {
+    text-decoration: underline;
+  }
