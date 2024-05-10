@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import CategoryList from "@/components/CategoryList";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
         </div>
         <CategoryList/>
         <div>
-          <a href="/products" className={styles.button}>VER TODOS LOS PRODUCTOS</a>
+          <Link href="/products" className={styles.button}>VER TODOS LOS PRODUCTOS</Link>
         </div>
       </main>
     </>
