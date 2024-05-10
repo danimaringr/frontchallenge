@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
@@ -10,7 +11,9 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.bar}>
+                <Link href="/">
             <img className={styles.logo} src="/vectors/kaveHome.svg" alt="Icono"/>
+                </Link>
                 <button className={styles.favoritos}>
                 <img src="/vectors/favoritos.svg" alt="Icono"/>
                 </button>
