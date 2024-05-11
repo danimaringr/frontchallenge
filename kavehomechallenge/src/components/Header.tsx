@@ -1,7 +1,17 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
+
+    const router = useRouter();
+    const [isFavoritesPage, setIsFavoritesPage] = useState(false);
+
+    useEffect(() => {
+        setIsFavoritesPage(router.pathname === '/favoritos');
+    }, [router.pathname]);
+
     return (
         <header className={styles.header}>
             <div className={styles.topbar}>
@@ -14,9 +24,11 @@ const Header = () => {
                 <Link href="/">
             <img className={styles.logo} src="/vectors/kaveHome.svg" alt="Icono"/>
                 </Link>
-                <button className={styles.favoritos}>
-                <img src="/vectors/favoritos.svg" alt="Icono"/>
-                </button>
+                <Link href="/favoritos">
+                    <button className={styles.favoritos}>
+                        <img src={isFavoritesPage ? "/vectors/favoritos2.svg" : "/vectors/favoritos.svg"} alt="Icono"/>
+                    </button>
+                </Link>
             </div>
         </header>
     );

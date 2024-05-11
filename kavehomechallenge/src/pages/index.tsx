@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         <CategoryList/>
         <div>
-          <Link href="/products" className={styles.button}>VER TODOS LOS PRODUCTOS</Link>
+          <Link href="/productos" className={styles.button}>VER TODOS LOS PRODUCTOS</Link>
         </div>
       </main>
     </>

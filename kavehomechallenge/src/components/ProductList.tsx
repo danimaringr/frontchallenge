@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard'
 import styles from '../styles/ProductList.module.css'
-import { FavoritosProvider } from '../contexts/FavoritosContext';
 import React from 'react';
 
 interface Product {
@@ -89,7 +88,6 @@ const ProductList = () => {
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
     return (
-        <FavoritosProvider>
         <div>
             <h1 className={styles.title}>Productos</h1>
             <ul className={styles.list}>
@@ -117,7 +115,6 @@ const ProductList = () => {
                 <button onClick={nextPage} disabled={currentPage === totalPages} className={styles.paginationButton}>{'►'}</button>
             </div>
         </div>
-        </FavoritosProvider>
     );
 }
 

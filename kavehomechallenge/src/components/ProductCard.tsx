@@ -1,6 +1,6 @@
 import styles from "../styles/ProductCard.module.css"
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFavoritos } from '../contexts/FavoritosContext';
 
 interface ProductCardProps {
@@ -12,10 +12,14 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ imageUrl, title, price, productId }) => {
     const { favoritos, toggleFavorito } = useFavoritos();
-    const [isFavorited, setIsFavorited] = useState(favoritos.includes(productId));
+    const [isFavorited, setIsFavorited] = useState(favoritos.some(product => product.productId === productId));
+
+    useEffect(() => {
+        setIsFavorited(favoritos.some(product => product.productId === productId));
+    }, [favoritos, productId]);
 
     const handleToggleFavorite = () => {
-        toggleFavorito(productId);
+        toggleFavorito(productId, imageUrl || "", title, price);
         setIsFavorited(!isFavorited);
     };
 

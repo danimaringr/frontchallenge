@@ -1,3 +1,8 @@
+.container {
+  overflow-x: auto;
+  max-width: 100%;  
+}
+
 .categoriaList {
     list-style: none; 
     justify-content: center; 
