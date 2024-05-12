@@ -6,22 +6,22 @@ import React from 'react';
 interface Product {
     productSku: string;
     productName: string;
-    productCollection: null | string;
-    productCategoryHierarchy: null | string;
+    productCollection: string;
+    productCategoryHierarchy: string;
     productMeasurements: {
-        height: null | string;
-        width: null | string;
-        length: null | string;
+        height: string;
+        width: string;
+        length: string;
     };
     productPrice: string;
-    productPriceDiscount: null | string;
-    productImageUrl: null | string;
-    store: null | string;
-    ecoPart: null | string;
-    productMaterials: null | string;
-    productUsage: null | string;
-    productAssemblyTime: null | string;
-    productAssemblyDescription: null | string;
+    productPriceDiscount: string;
+    productImageUrl: string;
+    store: string;
+    ecoPart: string;
+    productMaterials:  string;
+    productUsage: string;
+    productAssemblyTime: string;
+    productAssemblyDescription: string;
 }
 
 const ProductList = () => {
@@ -98,6 +98,8 @@ const ProductList = () => {
                             title={product.productName}
                             price={product.productPrice}
                             productId={product.productSku}
+                            collection={product.productCollection}
+                            category={product.productCategoryHierarchy}
                         />
                     ))}          
             </ul>

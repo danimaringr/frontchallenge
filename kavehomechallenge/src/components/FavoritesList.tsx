@@ -1,7 +1,7 @@
 import { useFavoritos } from '../contexts/FavoritosContext';
 import ProductCard from './ProductCard';
 import styles from '../styles/ProductList.module.css'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const FavoritesList: React.FC = () => {
   const { favoritos } = useFavoritos();
@@ -42,6 +42,8 @@ const FavoritesList: React.FC = () => {
             title={product.title}
             price={product.price}
             productId={product.productId}
+            category={product.category}
+            collection={product.collection}
           />
         ))}
       </ul>

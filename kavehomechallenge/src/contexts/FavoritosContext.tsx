@@ -5,11 +5,13 @@ interface Favorito {
     imageUrl: string;
     title: string;
     price: string;
+    category: string;
+    collection: string;
   }
 
-interface FavoritosContextType {
+  interface FavoritosContextType {
     favoritos: Favorito[];
-    toggleFavorito: (productId: string, imageUrl: string, title: string, price: string) => void;
+    toggleFavorito: (productId: string, imageUrl: string, title: string, price: string, category: string, collection: string) => void;
 }
 
 const FavoritosContext = createContext<FavoritosContextType | undefined>(undefined);
@@ -17,17 +19,17 @@ const FavoritosContext = createContext<FavoritosContextType | undefined>(undefin
 export const FavoritosProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
     const [favoritos, setFavoritos] = useState<Favorito[]>([]);
 
-    const toggleFavorito = (productId: string, imageUrl: string, title: string, price: string) => {
-    const index = favoritos.findIndex(favorito => favorito.productId === productId);
-    if (index !== -1) {
-      // Si el producto ya está en favoritos, lo eliminamos
-      const newFavoritos = [...favoritos];
-      newFavoritos.splice(index, 1);
-      setFavoritos(newFavoritos);
-    } else {
-      // Si el producto no está en favoritos, lo agregamos
-      setFavoritos([...favoritos, { productId, imageUrl, title, price }]);
-    }
+    const toggleFavorito = (productId: string, imageUrl: string, title: string, price: string, category: string, collection: string) => {
+      const index = favoritos.findIndex(favorito => favorito.productId === productId);
+      if (index !== -1) {
+        // Si el producto ya está en favoritos, lo eliminamos
+        const newFavoritos = [...favoritos];
+        newFavoritos.splice(index, 1);
+        setFavoritos(newFavoritos);
+      } else {
+        // Si el producto no está en favoritos, lo agregamos
+        setFavoritos([...favoritos, { productId, imageUrl, title, price, category, collection }]);
+      }
   };
 
   return (
